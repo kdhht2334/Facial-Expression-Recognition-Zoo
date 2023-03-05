@@ -1,4 +1,4 @@
-# Facial-Expression-Recognition-Zoo (in progress)
+# Facial-Expression-Recognition-Zoo
 
 FER-Zoo is a PyTorch toolbox for facial expression recognition (FER). This repository contains state-of-the-art (SOTA) FER frameworks as follows:
 
