@@ -1,8 +1,13 @@
-<img src="./images/logo.pnd" width="150">
+<img src="./images/logo.png" width="150">
 
 # Facial-Expression-Recognition-Zoo (FER-Zoo)
 
+<a href="https://releases.ubuntu.com/18.04/"><img alt="Ubuntu" src="https://img.shields.io/badge/Ubuntu-18.04-green"></a>
+<a href="https://www.python.org/downloads/release/python-370/"><img alt="PyThon" src="https://img.shields.io/badge/Python-v3.8-blue"></a>
+<a href="https://pytorch.org/get-started/locally/"><img alt="PyTorch" src="https://img.shields.io/badge/PyTorch-ee4c2c?logo=pytorch&logoColor=white"></a>
+
 FER-Zoo is a PyTorch toolbox for facial expression recognition (FER). Especially, we focus on affect estimation methods to regress valence-arousal (VA) value. This repository contains state-of-the-art (SOTA) FER frameworks as follows:
+
 
 | Methods | Venue | Link |
 | --- | --- | --- |
@@ -24,7 +29,6 @@ Requirements
 * torchvision >= 0.8.0
 * pretrainedmodels >=0.7.4
 * fabulous >= 0.4.0
-* git+git://github.com/openai/CLIP.git
 * wandb > 0.13.0
 
 
@@ -54,20 +58,12 @@ chmod 755 run.sh
 - `<method>`: 4 options (`elim`, `avce`, `caf`, and `baseline`).
 - `<gpu_no>`: GPU number such as 0 (or 0, 1 etc.)
 - `<port_no>`: port number to clarify workers (e.g., 12345)
-* __Note__: If you want to try 7-class task (e.g., AffectNet), add `age_script` folder to your train or val. script and turn on `elim_category` option.
 
-### Evaluation
+
+Evaluation
+---
+
 - Evaluation is performed automatically at each `print_check` point in training phase.
-
-Model Training
----
-(working)
-
-
-Model Evaluation
----
-(working)
-
 
 
 Milestone
