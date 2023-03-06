@@ -1,4 +1,4 @@
-<img src="./images/logo.png" width="250">
+<img src="./images/logo.png" width="350">
 
 # Facial-Expression-Recognition-Zoo (FER-Zoo)
 
