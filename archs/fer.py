@@ -1,5 +1,6 @@
 import os, argparse
 from time  import gmtime, strftime
+from .baseline import Baseline
 from .caf  import CAF
 from .avce import AVCE
 from .elim import ELIM
@@ -17,6 +18,8 @@ class FER(object):
             self.fer = AVCE(opt)
         elif opt.method == 'caf':
             self.fer = CAF(opt)
+        elif opt.method == 'baseline':
+            self.fer == Baseline(opt)
         self.fer.set_loader()
         self.fer.set_model()
 
@@ -26,7 +29,7 @@ class FER(object):
 
         # DEFAULT SETTINGS
         app.add_argument("--project_title", type=str, default='facial_expression_recognition_zoo', help='Title for wandb.')
-        app.add_argument("--method", type=str, default='eif', choices=['elim', 'avce', 'caf'])
+        app.add_argument("--method", type=str, default='eif', choices=['elim', 'avce', 'caf', 'baseline'])
         app.add_argument("--freq", type=int, default=1, help='Saving frequency.')
         app.add_argument("--online_tracker", type=int, default=1, help='On(1) or Off(0).')
         app.add_argument("--dataset", type=str, default='aff_wild', help='aff_wild / aff_wild2 / afew_va / affectNet.')

@@ -1,23 +1,63 @@
-# Facial-Expression-Recognition-Zoo
+<img src="./images/logo.pnd" width="150">
 
-FER-Zoo is a PyTorch toolbox for facial expression recognition (FER). This repository contains state-of-the-art (SOTA) FER frameworks as follows:
+# Facial-Expression-Recognition-Zoo (FER-Zoo)
 
- - CAF [[link]](https://ojs.aaai.org/index.php/AAAI/article/download/16743/16550)
- 
- - AVCE [[link]](https://www.ecva.net/papers/eccv_2022/papers_ECCV/papers/136730181.pdf)
+FER-Zoo is a PyTorch toolbox for facial expression recognition (FER). Especially, we focus on affect estimation methods to regress valence-arousal (VA) value. This repository contains state-of-the-art (SOTA) FER frameworks as follows:
 
- - ELIM [[link]](https://arxiv.org/pdf/2209.12172)
+| Methods | Venue | Link |
+| --- | --- | --- |
+| CAF | AAAI 2022 | [[link]](https://ojs.aaai.org/index.php/AAAI/article/download/16743/16550) |
+| AVCE | ECCV 2022 | [[link]](https://www.ecva.net/papers/eccv_2022/papers_ECCV/papers/136730181.pdf) |
+| ELIM | NeurIPS 2022 | [[link]](https://arxiv.org/pdf/2209.12172) |
 
 
 What's New
 ---
-(working)
+- [Mar. 2023] Add training and evaluation part of FER frameworks.
+- [Mar. 2023] Initial version of FER-Zoo.
 
 
 Requirements
 ---
-(working)
+* python >= 3.8.0
+* pytorch >= 1.7.1
+* torchvision >= 0.8.0
+* pretrainedmodels >=0.7.4
+* fabulous >= 0.4.0
+* git+git://github.com/openai/CLIP.git
+* wandb > 0.13.0
 
+
+Datasets
+---
+
+1. Download four public benchmarks for training and evaluation (please download after **agreement** accepted).
+
+  - [AffectNet](http://mohammadmahoor.com/affectnet/)
+  - [Aff-wild](https://ibug.doc.ic.ac.uk/resources/first-affect-wild-challenge/) 
+  - [Aff-wild2](https://ibug.doc.ic.ac.uk/resources/aff-wild2/)
+  - [AFEW-VA](https://ibug.doc.ic.ac.uk/resources/afew-va-database/)
+ 
+ (For more details visit [website](https://ibug.doc.ic.ac.uk/))
+
+2. Follow preprocessing rules for each dataset by referring pytorch official [custom dataset tutorial](https://pytorch.org/tutorials/beginner/data_loading_tutorial.html).
+
+
+Training
+---
+
+Just run the below script!
+```
+chmod 755 run.sh
+./run.sh <method> <gpu_no> <port_no> 
+```
+- `<method>`: 4 options (`elim`, `avce`, `caf`, and `baseline`).
+- `<gpu_no>`: GPU number such as 0 (or 0, 1 etc.)
+- `<port_no>`: port number to clarify workers (e.g., 12345)
+* __Note__: If you want to try 7-class task (e.g., AffectNet), add `age_script` folder to your train or val. script and turn on `elim_category` option.
+
+### Evaluation
+- Evaluation is performed automatically at each `print_check` point in training phase.
 
 Model Training
 ---
