@@ -1,6 +1,6 @@
-CUDA_VISIBLE_DEVICES=0 python -m torch.distributed.launch --master_port 12345 main.py \
-    --project_title TITLE \
-    --method caf \
+CUDA_VISIBLE_DEVICES=$2 python -m torch.distributed.launch --master_port $3 main.py \
+    --project_title $1_$2_$3 \
+    --method $1 \
 	--e_lr 4e-5 \
 	--r_lr 4e-5 \
 	--online_tracker 1 \
@@ -9,9 +9,9 @@ CUDA_VISIBLE_DEVICES=0 python -m torch.distributed.launch --master_port 12345 ma
 	--save_path /PATH/ \
 	--print_check 100
 
-CUDA_VISIBLE_DEVICES=0 python -m torch.distributed.launch --master_port 12474 main.py \
-    --project_title TITLE \
-    --method avce \
+CUDA_VISIBLE_DEVICES=$2 python -m torch.distributed.launch --master_port $3 main.py \
+    --project_title $1_$2_$3 \
+    --method $1 \
 	--e_lr 4e-5 \
 	--r_lr 4e-5 \
 	--online_tracker 1 \
@@ -20,9 +20,9 @@ CUDA_VISIBLE_DEVICES=0 python -m torch.distributed.launch --master_port 12474 ma
 	--save_path /PATH/ \
 	--print_check 100
 
-CUDA_VISIBLE_DEVICES=0 python -m torch.distributed.launch --master_port 12345 main.py \
-    --project_title TITLE \
-    --method elim \
+CUDA_VISIBLE_DEVICES=$2 python -m torch.distributed.launch --master_port $3 main.py \
+    --project_title $1_$2_$3 \
+    --method $1 \
 	--e_lr 1e-4 \
 	--r_lr 1e-4 \
 	--no_domain 5 \
