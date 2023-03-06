@@ -73,6 +73,9 @@ Milestone
   - [ ] Bench-marking table
 
 
+Acknowledgments
+This repository is partially inspired by [FaceX-Zoo](https://github.com/JDAI-CV/FaceX-Zoo) and [InsightFace_Pytorch](https://github.com/TreB1eN/InsightFace_Pytorch).
+
 Citation
 ---
 
