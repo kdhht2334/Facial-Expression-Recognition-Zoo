@@ -29,11 +29,16 @@ class AVCE(BasicTask):
     def set_loader(self):
         opt = self.opt
 
-        training_path = opt.data_path+'training.csv'
-        validation_path = opt.data_path+'validation.csv'
+        if opt.dataset_type == 'custom':  # from StableDiffusion models
+            data_path = opt.custom_data_path
+        elif opt.dataset_type == 'public':  # e.g., AFEW-VA or Aff-wild2
+            data_path = opt.public_data_path
+
+        training_path = data_path+'training.csv'
+        validation_path = data_path+'validation.csv'
 
         face_dataset = FaceDataset(csv_file=training_path,
-                                   root_dir=opt.data_path,
+                                   root_dir=data_path+'train/',
                                    transform=transforms.Compose([
                                        transforms.Resize(256), transforms.RandomCrop(size=224),
                                        transforms.RandomHorizontalFlip(),
@@ -42,7 +47,7 @@ class AVCE(BasicTask):
                                    ]), inFolder=None)
     
         face_dataset_val = FaceDataset(csv_file=validation_path,
-                                       root_dir=opt.data_path,
+                                       root_dir=data_path+'val/',
                                        transform=transforms.Compose([
                                            transforms.Resize(256), transforms.CenterCrop(size=224),
                                            transforms.ToTensor(),

@@ -30,6 +30,10 @@ class FER(object):
         # DEFAULT SETTINGS
         app.add_argument("--project_title", type=str, default='facial_expression_recognition_zoo', help='Title for wandb.')
         app.add_argument("--method", type=str, default='eif', choices=['elim', 'avce', 'caf', 'baseline'])
+        app.add_argument("--dataset_type", type=str, default='custom', choices=['custom', 'public'])
+        app.add_argument("--custom_data_path", type=str, default='./custom_dataset/')
+        app.add_argument("--public_data_path", type=str, default='/PATH/')
+        app.add_argument("--save_path", type=str, default='/PATH/')
         app.add_argument("--freq", type=int, default=1, help='Saving frequency.')
         app.add_argument("--online_tracker", type=int, default=1, help='On(1) or Off(0).')
         app.add_argument("--dataset", type=str, default='aff_wild', help='aff_wild / aff_wild2 / afew_va / affectNet.')
@@ -68,8 +72,6 @@ class FER(object):
 
         app.add_argument("--tr_batch_size", type=int, default=64, help='Mini-batch size for model training.')
         app.add_argument("--te_batch_size", type=int, default=64, help='Mini-batch size for model inference.')
-        app.add_argument("--data_path", type=str, default='/PATH/')
-        app.add_argument("--save_path", type=str, default='/PATH/')
         return app
 
     def fit(self):

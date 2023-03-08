@@ -1,6 +1,7 @@
-CUDA_VISIBLE_DEVICES=$2 python -m torch.distributed.launch --master_port $3 main.py \
-    --project_title $1_$2_$3 \
-    --method $1 \
+CUDA_VISIBLE_DEVICES=$3 python -m torch.distributed.launch --master_port $4 main.py \
+    --project_title $1_$2_$3_$4 \
+    --method $2 \
+    --dataset_type $1 \
 	--e_lr 4e-5 \
 	--r_lr 4e-5 \
 	--online_tracker 1 \
@@ -9,9 +10,10 @@ CUDA_VISIBLE_DEVICES=$2 python -m torch.distributed.launch --master_port $3 main
 	--save_path /PATH/ \
 	--print_check 100
 
-CUDA_VISIBLE_DEVICES=$2 python -m torch.distributed.launch --master_port $3 main.py \
-    --project_title $1_$2_$3 \
-    --method $1 \
+CUDA_VISIBLE_DEVICES=$3 python -m torch.distributed.launch --master_port $4 main.py \
+    --project_title $1_$2_$3_$4 \
+    --method $2 \
+    --dataset_type $1 \
 	--e_lr 4e-5 \
 	--r_lr 4e-5 \
 	--online_tracker 1 \
@@ -20,9 +22,10 @@ CUDA_VISIBLE_DEVICES=$2 python -m torch.distributed.launch --master_port $3 main
 	--save_path /PATH/ \
 	--print_check 100
 
-CUDA_VISIBLE_DEVICES=$2 python -m torch.distributed.launch --master_port $3 main.py \
-    --project_title $1_$2_$3 \
-    --method $1 \
+CUDA_VISIBLE_DEVICES=$3 python -m torch.distributed.launch --master_port $4 main.py \
+    --project_title $1_$2_$3_$4 \
+    --method $2 \
+    --dataset_type $1 \
 	--e_lr 1e-4 \
 	--r_lr 1e-4 \
 	--no_domain 5 \

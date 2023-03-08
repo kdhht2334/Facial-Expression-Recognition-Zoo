@@ -11,6 +11,7 @@ FER-Zoo is a PyTorch toolbox for facial expression recognition (FER). Especially
 
 | Methods | Venue | Link |
 | --- | --- | --- |
+| Baseline | TAC 2017 | [[link]](https://arxiv.org/abs/1708.03985) |
 | CAF | AAAI 2022 | [[link]](https://ojs.aaai.org/index.php/AAAI/article/download/16743/16550) |
 | AVCE | ECCV 2022 | [[link]](https://www.ecva.net/papers/eccv_2022/papers_ECCV/papers/136730181.pdf) |
 | ELIM | NeurIPS 2022 | [[link]](https://arxiv.org/pdf/2209.12172) |
@@ -18,6 +19,8 @@ FER-Zoo is a PyTorch toolbox for facial expression recognition (FER). Especially
 
 What's New
 ---
+- [Mar. 2023] Add free expression dataset from `StableDiffusion-WebUI` [[link]](https://github.com/camenduru/stable-diffusion-webui-colab).
+- [Mar. 2023] Add `Baseline` framework.
 - [Mar. 2023] Add training and evaluation part of FER frameworks.
 - [Mar. 2023] Initial version of FER-Zoo.
 
@@ -32,7 +35,16 @@ Requirements
 * wandb > 0.13.0
 
 
-Datasets
+[NEW] Custom Datasets
+---
+
+1. You can utilize the images containing various expression patterns in the `custom_dataset` folder. These images were created from `StableDiffusion-WebUI` [[link]](https://github.com/camenduru/stable-diffusion-webui-colab).
+  - Facial regions are cropped by using `facenet-pytorch` [[link]](https://github.com/timesler/facenet-pytorch).
+  
+2. Change `<dataset_type>` to `custom` when training the model using `run.sh`.
+
+
+Public Datasets
 ---
 
 1. Download four public benchmarks for training and evaluation (please download after **agreement** accepted).
@@ -53,8 +65,9 @@ Training
 Just run the below script!
 ```
 chmod 755 run.sh
-./run.sh <method> <gpu_no> <port_no> 
+./run.sh <dataset_type> <method> <gpu_no> <port_no> 
 ```
+- `<dataset_type>`: 2 options (`custom` or `public`).
 - `<method>`: 4 options (`elim`, `avce`, `caf`, and `baseline`).
 - `<gpu_no>`: GPU number such as 0 (or 0, 1 etc.)
 - `<port_no>`: port number to clarify workers (e.g., 12345)
