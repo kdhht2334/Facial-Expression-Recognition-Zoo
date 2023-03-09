@@ -35,6 +35,18 @@ Requirements
 * wandb > 0.13.0
 
 
+Get Started (TBD)
+---
+
+DiffusionDB is available at [🤗 Hugging Face Datasets](https://huggingface.co/datasets/kdhht2334/DiffusionEmotion).
+
+#### Subsets
+(TBD)
+
+#### Data structure
+(TBD)
+
+
 [NEW] Custom Datasets
 ---
 
