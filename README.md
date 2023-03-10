@@ -13,7 +13,7 @@ FER-Zoo is a PyTorch toolbox for facial expression recognition (FER). Especially
 | Methods | Venue | Link |
 | --- | --- | --- |
 | Baseline | TAC 2017 | [[link]](https://arxiv.org/abs/1708.03985) |
-| CAF | AAAI 2022 | [[link]](https://ojs.aaai.org/index.php/AAAI/article/download/16743/16550) |
+| CAF | AAAI 2021 | [[link]](https://ojs.aaai.org/index.php/AAAI/article/download/16743/16550) |
 | AVCE | ECCV 2022 | [[link]](https://www.ecva.net/papers/eccv_2022/papers_ECCV/papers/136730181.pdf) |
 | ELIM | NeurIPS 2022 | [[link]](https://arxiv.org/pdf/2209.12172) |
 
@@ -111,7 +111,7 @@ If our work is useful for your work, then please consider citing below bibtex:
 
 ```bibtex
 @inproceedings{kim2021contrastive,
-	title={Contrastive adversarial learning for person independent facial emotion recognition},
+    title={Contrastive adversarial learning for person independent facial emotion recognition},
     author={Kim, Daeha and Song, Byung Cheol},
     booktitle={Proceedings of the AAAI Conference on Artificial Intelligence},
     volume={35},
@@ -130,10 +130,10 @@ If our work is useful for your work, then please consider citing below bibtex:
 }
 
 @misc{kim2022elim,
-        author = {Kim, Daeha and Song, Byung Cheol},
-        title = {Optimal Transport-based Identity Matching for Identity-invariant Facial Expression Recognition},
-        Year = {2022},
-        Eprint = {arXiv:2209.12172}
+    author = {Kim, Daeha and Song, Byung Cheol},
+    title = {Optimal Transport-based Identity Matching for Identity-invariant Facial Expression Recognition},
+    Year = {2022},
+    Eprint = {arXiv:2209.12172}
 }
 ```
 
